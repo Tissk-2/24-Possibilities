@@ -69,7 +69,7 @@ tailwind.config = {
     
     <header class="bg-white/80 backdrop-blur text-app-primary w-full top-0 z-50 border-b border-app-border/50 hidden" id="app-header" style="display:none;">
         <div class="flex justify-between items-center w-full px-4 py-3">
-            <div class="font-bold text-app-primary cursor-pointer tracking-tight" onclick="showView('landing')">24Possibilities</div>
+            <div class="font-bold text-app-primary tracking-tight">24Possibilities</div>
             <div class="flex items-center gap-3">
                 <div class="flex gap-1">
                 </div>
@@ -95,7 +95,12 @@ tailwind.config = {
         <!-- Game View -->
         <main id="view-game" class="view-section flex-1 flex-col items-center justify-start pt-6 p-6 relative bg-app-surface w-full">
             <div class="w-full flex justify-between items-center mb-8">
-                <span class="font-bold text-app-primary text-xl cursor-pointer tracking-tight" onclick="showView('landing')">24</span>
+                <div class="flex items-center gap-3">
+                    <span class="font-bold text-app-primary text-xl tracking-tight">24</span>
+                    <button onclick="showTutorial()" class="w-8 h-8 rounded-full bg-white border border-app-border text-app-subtext hover:text-app-text hover:bg-app-bg flex items-center justify-center transition-all shadow-sm active:scale-95" title="How to Play">
+                        <span class="material-symbols-outlined text-[18px]">help</span>
+                    </button>
+                </div>
                 <div class="flex items-center gap-3 bg-app-bg px-3.5 py-1.5 rounded-full border border-app-border shadow-inner-soft">
                     <span class="material-symbols-outlined text-orange-500 text-[18px]">local_fire_department</span>
                     <span id="mobile-streak" class="text-app-text font-semibold text-sm">0</span>
