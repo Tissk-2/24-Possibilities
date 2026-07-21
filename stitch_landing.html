@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>24Possibilities - Mental Math Challenge</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "surface-container": "#eceef0",
+                "background": "#f7f9fb",
+                "on-primary-container": "#fefcff",
+                "surface-container-low": "#f2f4f6",
+                "primary": "#0058be",
+                "on-secondary-fixed": "#111c2d",
+                "outline": "#727785",
+                "on-error": "#ffffff",
+                "tertiary-fixed": "#d3e4fe",
+                "on-tertiary-fixed": "#0b1c30",
+                "primary-container": "#2170e4",
+                "on-background": "#191c1e",
+                "on-secondary-container": "#586377",
+                "tertiary-fixed-dim": "#b7c8e1",
+                "outline-variant": "#c2c6d6",
+                "inverse-surface": "#2d3133",
+                "on-primary": "#ffffff",
+                "inverse-primary": "#adc6ff",
+                "surface-tint": "#005ac2",
+                "on-surface-variant": "#424754",
+                "surface": "#f7f9fb",
+                "on-tertiary-fixed-variant": "#38485d",
+                "on-surface": "#191c1e",
+                "secondary-fixed": "#d8e3fb",
+                "on-tertiary-container": "#fdfcff",
+                "primary-fixed": "#d8e2ff",
+                "surface-container-highest": "#e0e3e5",
+                "secondary-container": "#d5e0f8",
+                "on-secondary": "#ffffff",
+                "surface-container-high": "#e6e8ea",
+                "on-error-container": "#93000a",
+                "surface-container-lowest": "#ffffff",
+                "on-tertiary": "#ffffff",
+                "on-secondary-fixed-variant": "#3c475a",
+                "inverse-on-surface": "#eff1f3",
+                "error-container": "#ffdad6",
+                "secondary-fixed-dim": "#bcc7de",
+                "surface-bright": "#f7f9fb",
+                "on-primary-fixed": "#001a42",
+                "tertiary": "#4d5d73",
+                "surface-dim": "#d8dadc",
+                "surface-variant": "#e0e3e5",
+                "secondary": "#545f73",
+                "error": "#ba1a1a",
+                "on-primary-fixed-variant": "#004395",
+                "primary-fixed-dim": "#adc6ff",
+                "tertiary-container": "#66768d"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "md": "16px",
+                "lg": "24px",
+                "xl": "48px",
+                "max-width": "1280px",
+                "base": "4px",
+                "gutter": "24px",
+                "xs": "4px",
+                "margin-mobile": "16px",
+                "margin-desktop": "64px",
+                "sm": "8px",
+                "container-max": "600px"
+        },
+        "fontFamily": {
+                "number-display": [
+                        "Space Mono"
+                ],
+                "label-caps": [
+                        "Geist"
+                ],
+                "number-card": [
+                        "Space Mono"
+                ],
+                "headline-lg-mobile": [
+                        "Geist"
+                ],
+                "body-sm": [
+                        "Geist"
+                ],
+                "body-lg": [
+                        "Geist"
+                ],
+                "label-md": [
+                        "Geist"
+                ],
+                "headline-md": [
+                        "Geist"
+                ],
+                "display": [
+                        "Geist"
+                ],
+                "headline-lg": [
+                        "Geist"
+                ],
+                "code": [
+                        "Geist Mono"
+                ],
+                "body-md": [
+                        "Geist"
+                ]
+        },
+        "fontSize": {
+                "number-display": [
+                        "40px",
+                        {
+                                "lineHeight": "48px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "label-caps": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "number-card": [
+                        "28px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-sm": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-md": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.02em",
+                                "fontWeight": "500"
+                        }
+                ],
+                "headline-md": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "display": [
+                        "48px",
+                        {
+                                "lineHeight": "56px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-lg": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "code": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        
+        .math-pattern {
+            background-image: 
+                radial-gradient(circle at 20% 30%, theme('colors.surface-container-high') 2px, transparent 2px),
+                radial-gradient(circle at 80% 70%, theme('colors.surface-container-high') 2px, transparent 2px),
+                linear-gradient(45deg, transparent 48%, theme('colors.surface-container') 49%, theme('colors.surface-container') 51%, transparent 52%);
+            background-size: 100px 100px, 150px 150px, 200px 200px;
+            opacity: 0.4;
+        }
+
+        .floating-card {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(2deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center relative overflow-hidden font-body-md text-body-md bg-background">
+<!-- Background Pattern -->
+<div class="absolute inset-0 math-pattern pointer-events-none"></div>
+<!-- Decorative Floating Cards (Background) -->
+<div class="absolute top-20 left-10 opacity-30 floating-card" style="animation-delay: 0s;">
+<div class="w-16 h-16 bg-surface-variant rounded-lg flex items-center justify-center font-number-card text-number-card text-on-surface-variant shadow-sm border border-outline-variant/30">8</div>
+</div>
+<div class="absolute bottom-32 right-10 opacity-30 floating-card" style="animation-delay: 2s;">
+<div class="w-20 h-20 bg-surface-variant rounded-lg flex items-center justify-center font-number-card text-number-card text-on-surface-variant shadow-sm border border-outline-variant/30">3</div>
+</div>
+<div class="absolute top-40 right-20 opacity-20 floating-card" style="animation-delay: 1s;">
+<div class="w-12 h-12 bg-primary-container rounded-full flex items-center justify-center font-number-card text-number-card text-on-primary-container shadow-sm">×</div>
+</div>
+<!-- Main Container -->
+<main class="relative z-10 w-full max-w-container-max mx-auto px-gutter md:px-lg flex flex-col items-center text-center">
+<!-- Branding / Hero -->
+<div class="mb-xl">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary mb-sm tracking-tight">
+                24Possibilities
+            </h1>
+<p class="text-on-surface-variant max-w-md mx-auto">
+                The ultimate mental math challenge. Use 4 numbers to make 24.
+            </p>
+</div>
+<!-- Sample Game Display (Visual Anchor) -->
+<div class="flex gap-md mb-xl p-md bg-surface-container rounded-xl shadow-sm border border-outline-variant/40">
+<div class="w-16 h-16 md:w-20 md:h-20 bg-surface rounded-lg flex items-center justify-center font-number-card text-number-card text-on-surface shadow-[0_2px_4px_rgba(0,0,0,0.05)] border border-outline-variant/20">4</div>
+<div class="w-16 h-16 md:w-20 md:h-20 bg-surface rounded-lg flex items-center justify-center font-number-card text-number-card text-on-surface shadow-[0_2px_4px_rgba(0,0,0,0.05)] border border-outline-variant/20">6</div>
+<div class="w-16 h-16 md:w-20 md:h-20 bg-surface rounded-lg flex items-center justify-center font-number-card text-number-card text-on-surface shadow-[0_2px_4px_rgba(0,0,0,0.05)] border border-outline-variant/20">8</div>
+<div class="w-16 h-16 md:w-20 md:h-20 bg-surface rounded-lg flex items-center justify-center font-number-card text-number-card text-on-surface shadow-[0_2px_4px_rgba(0,0,0,0.05)] border border-outline-variant/20">9</div>
+</div>
+<!-- Action Area -->
+<div class="w-full max-w-sm flex flex-col gap-md">
+<button class="w-full py-4 bg-primary text-on-primary font-body-md text-body-md font-bold rounded-lg hover:bg-primary-container hover:text-on-primary-container transition-all shadow-[0_4px_12px_rgba(0,0,0,0.1)] active:scale-95 active:shadow-none">
+                Play as Guest
+            </button>
+<div class="relative flex items-center py-2">
+<div class="flex-grow border-t border-outline-variant/50"></div>
+<span class="flex-shrink-0 px-4 text-on-surface-variant font-label-caps text-label-caps uppercase tracking-wider">or</span>
+<div class="flex-grow border-t border-outline-variant/50"></div>
+</div>
+<button class="w-full py-4 bg-surface-container-high text-on-surface font-body-md text-body-md border border-outline-variant/50 rounded-lg hover:bg-surface-variant transition-colors active:scale-95 flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">account_circle</span>
+                Login / Register
+            </button>
+</div>
+<!-- Social Proof -->
+<div class="mt-xl pt-lg border-t border-outline-variant/30 flex flex-col items-center gap-sm">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full bg-tertiary-container border-2 border-background flex items-center justify-center"><span class="material-symbols-outlined text-[16px] text-on-tertiary-container">person</span></div>
+<div class="w-8 h-8 rounded-full bg-secondary-container border-2 border-background flex items-center justify-center"><span class="material-symbols-outlined text-[16px] text-on-secondary-container">person</span></div>
+<div class="w-8 h-8 rounded-full bg-error-container border-2 border-background flex items-center justify-center"><span class="material-symbols-outlined text-[16px] text-on-error-container">person</span></div>
+</div>
+<p class="font-label-caps text-label-caps text-on-surface-variant">
+                Join 5,000+ puzzle enthusiasts.
+            </p>
+</div>
+</main>
+</body></html>
