@@ -55,11 +55,11 @@ tailwind.config = {
         transform: translateY(0);
     }
     
-    #toast-container { position: fixed; top: 20px; left: 50%; transform: translateX(-50%); z-index: 9999; display: flex; flex-direction: column; align-items: center; }
+    #toast-container { position: fixed; top: 20px; right: 20px; z-index: 9999; display: flex; flex-direction: column; align-items: flex-end; }
     .toast { padding: 12px 24px; border-radius: 999px; margin-bottom: 10px; color: #fff; font-weight: 500; font-size: 0.875rem; box-shadow: 0 4px 12px rgba(0,0,0,0.15); animation: fadein 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
     @keyframes fadein { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
     .toast-error { background-color: #ef4444; }
-    .toast-success { background-color: theme('colors.app.primary'); }
+    .toast-success { background-color: #22c55e; }
 </style>
 </head>
 <body class="bg-app-bg text-app-text min-h-screen flex items-center justify-center font-sans antialiased p-0 md:p-8">
@@ -111,8 +111,9 @@ tailwind.config = {
             </div>
 
             <div class="w-full max-w-2xl flex flex-col gap-6 mx-auto mt-4 md:mt-8">
-                <div class="bg-app-bg border border-app-border rounded-2xl p-6 flex items-center justify-center min-h-[80px] shadow-inner-soft">
+                <div class="bg-app-bg border border-app-border rounded-2xl p-6 flex flex-col items-center justify-center min-h-[100px] shadow-inner-soft">
                     <div id="equation-display" class="font-mono text-2xl md:text-4xl text-app-text tracking-[0.2em] font-bold"></div>
+                    <div id="live-result" class="font-mono text-app-subtext text-sm md:text-base mt-2 min-h-[24px]"></div>
                 </div>
 
                 <div id="number-cards" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-2">
@@ -176,7 +177,7 @@ tailwind.config = {
                 <p>Solve them quickly to build your streak score! If you get stuck, using a hint resets your streak.</p>
             </div>
             <div id="tutorial-id" class="text-app-text text-sm mb-6 space-y-3 leading-relaxed hidden">
-                <p>Gunakan keempat angka yang diberikan tepat satu kali untuk membuat persamaan yang bernilai <strong>24</strong>.</p>
+                <p>Gunakan keempat angka yang diberikan masing2 satu kali untuk membuat persamaan yang bernilai <strong>24</strong>.</p>
                 <p>Kamu bisa menggunakan penjumlahan <span class="font-bold border border-app-border bg-app-bg px-1 rounded">+</span>, pengurangan <span class="font-bold border border-app-border bg-app-bg px-1 rounded">-</span>, perkalian <span class="font-bold border border-app-border bg-app-bg px-1 rounded">×</span>, dan pembagian <span class="font-bold border border-app-border bg-app-bg px-1 rounded">÷</span>, serta tanda kurung <span class="font-bold border border-app-border bg-app-bg px-1 rounded">()</span>.</p>
                 <p><strong>Contoh:</strong> Jika angka kamu adalah <span class="font-bold border border-app-border bg-app-bg px-1.5 rounded">3</span>, <span class="font-bold border border-app-border bg-app-bg px-1.5 rounded">4</span>, <span class="font-bold border border-app-border bg-app-bg px-1.5 rounded">5</span>, dan <span class="font-bold border border-app-border bg-app-bg px-1.5 rounded">6</span>, salah satu solusinya bisa berupa:</p>
                 <p class="font-mono bg-app-bg p-3 rounded-lg text-center tracking-widest font-bold text-base border border-app-border shadow-inner-soft">(5+3) × (6-4)</p>

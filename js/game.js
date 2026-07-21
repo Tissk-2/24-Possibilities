@@ -157,6 +157,38 @@ function renderBoard() {
         if (txt === '/') txt = '÷';
         return txt;
     }).join(' ');
+
+    // Live Result
+    const liveResult = document.getElementById('live-result');
+    if (state.equationTokens.length > 0) {
+        const eqStr = state.equationTokens.map(t => t.val).join('');
+        let balance = 0;
+        let validParens = true;
+        for(let t of state.equationTokens) {
+            if(t.val === '(') balance++;
+            if(t.val === ')') balance--;
+            if(balance < 0) validParens = false;
+        }
+        
+        const last = state.equationTokens[state.equationTokens.length - 1];
+        if (last && (last.type === 'num' || last.val === ')') && validParens && balance === 0) {
+            try {
+                const result = new Function('return ' + eqStr)();
+                if (Number.isFinite(result)) {
+                    let fmtRes = Math.abs(result % 1) < 1e-6 ? Math.round(result) : parseFloat(result.toFixed(2));
+                    liveResult.innerText = `= ${fmtRes}`;
+                } else {
+                    liveResult.innerText = '';
+                }
+            } catch (e) {
+                liveResult.innerText = '';
+            }
+        } else {
+            liveResult.innerText = '';
+        }
+    } else {
+        liveResult.innerText = '';
+    }
 }
 
 function addNum(id) {
