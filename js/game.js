@@ -259,6 +259,31 @@ function closeTutorial() {
     }, 200);
 }
 
+function setTutorialLang(lang) {
+    const enBtn = document.getElementById('lang-en');
+    const idBtn = document.getElementById('lang-id');
+    const enContent = document.getElementById('tutorial-en');
+    const idContent = document.getElementById('tutorial-id');
+    const title = document.getElementById('tutorial-title');
+    const closeBtn = document.getElementById('tutorial-btn');
+
+    if (lang === 'en') {
+        enBtn.className = 'px-3 py-1 rounded-md text-xs font-bold transition-all bg-white shadow-sm text-app-primary';
+        idBtn.className = 'px-3 py-1 rounded-md text-xs font-bold transition-all text-app-subtext hover:text-app-primary';
+        enContent.classList.remove('hidden');
+        idContent.classList.add('hidden');
+        title.innerText = 'How to Play';
+        closeBtn.innerText = 'Got it!';
+    } else {
+        idBtn.className = 'px-3 py-1 rounded-md text-xs font-bold transition-all bg-white shadow-sm text-app-primary';
+        enBtn.className = 'px-3 py-1 rounded-md text-xs font-bold transition-all text-app-subtext hover:text-app-primary';
+        idContent.classList.remove('hidden');
+        enContent.classList.add('hidden');
+        title.innerText = 'Cara Bermain';
+        closeBtn.innerText = 'Mengerti!';
+    }
+}
+
 function executeHint() {
     closeConfirmModal();
     clearInterval(state.timerInt);

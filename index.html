@@ -161,16 +161,29 @@ tailwind.config = {
     <!-- Tutorial Modal -->
     <div id="tutorial-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[100] flex items-center justify-center hidden opacity-0 transition-opacity duration-200">
         <div class="bg-white rounded-2xl p-6 max-w-sm w-full mx-4 shadow-float transform scale-95 transition-transform duration-200" id="tutorial-modal-content">
-            <h3 class="text-xl font-bold text-app-text mb-4 tracking-tight">How to Play</h3>
-            <div class="text-app-text text-sm mb-6 space-y-3 leading-relaxed">
+            <div class="flex justify-between items-center mb-4">
+                <h3 id="tutorial-title" class="text-xl font-bold text-app-text tracking-tight">How to Play</h3>
+                <div class="flex bg-app-bg p-1 rounded-lg border border-app-border">
+                    <button id="lang-en" onclick="setTutorialLang('en')" class="px-3 py-1 rounded-md text-xs font-bold transition-all bg-white shadow-sm text-app-primary">EN</button>
+                    <button id="lang-id" onclick="setTutorialLang('id')" class="px-3 py-1 rounded-md text-xs font-bold transition-all text-app-subtext hover:text-app-primary">ID</button>
+                </div>
+            </div>
+            <div id="tutorial-en" class="text-app-text text-sm mb-6 space-y-3 leading-relaxed">
                 <p>Use all four given numbers exactly once to create an equation that equals <strong>24</strong>.</p>
                 <p>You can use addition <span class="font-bold border border-app-border bg-app-bg px-1 rounded">+</span>, subtraction <span class="font-bold border border-app-border bg-app-bg px-1 rounded">-</span>, multiplication <span class="font-bold border border-app-border bg-app-bg px-1 rounded">×</span>, and division <span class="font-bold border border-app-border bg-app-bg px-1 rounded">÷</span>, as well as parentheses <span class="font-bold border border-app-border bg-app-bg px-1 rounded">()</span>.</p>
                 <p><strong>Example:</strong> If your numbers are <span class="font-bold border border-app-border bg-app-bg px-1.5 rounded">3</span>, <span class="font-bold border border-app-border bg-app-bg px-1.5 rounded">4</span>, <span class="font-bold border border-app-border bg-app-bg px-1.5 rounded">5</span>, and <span class="font-bold border border-app-border bg-app-bg px-1.5 rounded">6</span>, a solution could be:</p>
                 <p class="font-mono bg-app-bg p-3 rounded-lg text-center tracking-widest font-bold text-base border border-app-border shadow-inner-soft">(5+3) × (6-4)</p>
                 <p>Solve them quickly to build your streak score! If you get stuck, using a hint resets your streak.</p>
             </div>
+            <div id="tutorial-id" class="text-app-text text-sm mb-6 space-y-3 leading-relaxed hidden">
+                <p>Gunakan keempat angka yang diberikan tepat satu kali untuk membuat persamaan yang bernilai <strong>24</strong>.</p>
+                <p>Kamu bisa menggunakan penjumlahan <span class="font-bold border border-app-border bg-app-bg px-1 rounded">+</span>, pengurangan <span class="font-bold border border-app-border bg-app-bg px-1 rounded">-</span>, perkalian <span class="font-bold border border-app-border bg-app-bg px-1 rounded">×</span>, dan pembagian <span class="font-bold border border-app-border bg-app-bg px-1 rounded">÷</span>, serta tanda kurung <span class="font-bold border border-app-border bg-app-bg px-1 rounded">()</span>.</p>
+                <p><strong>Contoh:</strong> Jika angka kamu adalah <span class="font-bold border border-app-border bg-app-bg px-1.5 rounded">3</span>, <span class="font-bold border border-app-border bg-app-bg px-1.5 rounded">4</span>, <span class="font-bold border border-app-border bg-app-bg px-1.5 rounded">5</span>, dan <span class="font-bold border border-app-border bg-app-bg px-1.5 rounded">6</span>, salah satu solusinya bisa berupa:</p>
+                <p class="font-mono bg-app-bg p-3 rounded-lg text-center tracking-widest font-bold text-base border border-app-border shadow-inner-soft">(5+3) × (6-4)</p>
+                <p>Selesaikan dengan cepat untuk meningkatkan skor kemenangan beruntun (streak) kamu! Jika kamu kesulitan, menggunakan bantuan (hint) akan mengulang streak kamu menjadi 0.</p>
+            </div>
             <div class="flex justify-end">
-                <button onclick="closeTutorial()" class="w-full px-5 py-3 rounded-xl bg-app-primary text-white font-semibold shadow-soft hover:shadow-float active:scale-95 transition-all">Got it!</button>
+                <button id="tutorial-btn" onclick="closeTutorial()" class="w-full px-5 py-3 rounded-xl bg-app-primary text-white font-semibold shadow-soft hover:shadow-float active:scale-95 transition-all">Got it!</button>
             </div>
         </div>
     </div>
