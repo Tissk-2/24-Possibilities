@@ -239,6 +239,26 @@ function closeConfirmModal() {
     }, 200);
 }
 
+function showTutorial() {
+    const modal = document.getElementById('tutorial-modal');
+    const content = document.getElementById('tutorial-modal-content');
+    modal.classList.remove('hidden');
+    setTimeout(() => {
+        modal.classList.remove('opacity-0');
+        content.classList.remove('scale-95');
+    }, 10);
+}
+
+function closeTutorial() {
+    const modal = document.getElementById('tutorial-modal');
+    const content = document.getElementById('tutorial-modal-content');
+    modal.classList.add('opacity-0');
+    content.classList.add('scale-95');
+    setTimeout(() => {
+        modal.classList.add('hidden');
+    }, 200);
+}
+
 function executeHint() {
     closeConfirmModal();
     clearInterval(state.timerInt);
