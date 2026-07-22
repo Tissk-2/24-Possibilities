@@ -344,12 +344,8 @@ function submitEq() {
         
         if (Math.abs(result - 24) < 1e-6) {
             clearInterval(state.timerInt);
-            let timeTaken = (Date.now() - state.startTime) / 1000;
-            // Calculate a score based on speed (max 100, min 10)
-            let roundScore = Math.max(10, Math.floor(100 - (timeTaken * 2)));
-            
-            updateStreak(state.streak + roundScore);
-            showToast(`Correct! +${roundScore} points!`, "success");
+            updateStreak(state.streak + 1);
+            showToast("Correct!", "success");
             setTimeout(startGame, 2000);
         } else {
             showToast(`Incorrect. Result is ${result}`);
